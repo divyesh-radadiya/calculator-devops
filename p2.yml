@@ -1,0 +1,8 @@
+---
+- name: Deploy a jar file
+  hosts: all
+  tasks:
+    - name: Copy jar file to home directory
+      copy:
+        src: ./target/calculator-devops-0.0.1-SNAPSHOT.jar
+        dest: ~/
