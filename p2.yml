@@ -1,8 +1,9 @@
 ---
-- name: Deploy a jar file
+- name: Pull docker image of app
   hosts: all
   tasks:
-    - name: Copy jar file to home directory
-      copy:
-        src: ./target/calculator-devops-0.0.1-SNAPSHOT.jar
-        dest: ~/
+    - name: Pull app devops image
+      docker_image:
+          name: divyeshradadiya/caldev
+          Source: pull
+        
