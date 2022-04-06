@@ -5,5 +5,5 @@
     - name: Pull app devops image
       docker_image:
           name: divyeshradadiya/caldev
-          Source: pull
+          source: pull
         
