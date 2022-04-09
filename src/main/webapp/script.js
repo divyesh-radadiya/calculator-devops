@@ -20,7 +20,7 @@ function calculatePower() {
  var p = document.getElementById("result").value;
  var b = document.getElementById("result2").value;
 
-    fetch('http://localhost:8080/getpower', {
+    fetch('http://localhost:8081/getpower', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -36,7 +36,7 @@ function calculatePower() {
 }
 function calculateRoot() {
  var p = document.getElementById("result").value;
-    fetch('http://localhost:8080/getsqrt', {
+    fetch('http://localhost:8081/getsqrt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -56,7 +56,7 @@ function calculateRoot() {
 function calculateLog() {
 
  var p = document.getElementById("result").value;
-    fetch('http://localhost:8080/getlog', {
+    fetch('http://localhost:8081/getlog', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -74,7 +74,7 @@ function calculateLog() {
 function calculateFact() {
  var p = document.getElementById("result").value;
 
-    fetch('http://localhost:8080/getfact', {
+    fetch('http://localhost:8081/getfact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
