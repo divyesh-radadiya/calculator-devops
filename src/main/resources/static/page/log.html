@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
  <meta charset="utf-8">
- <title> Scientific Calculator </title>
- <link rel="stylesheet" href="styles.css">
+ <title> Simple Calculator </title>
+ <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <table class = "calculator" >
@@ -12,7 +12,7 @@
    <table class = "head" >
     <tr>
      <td style="color:white;text-align:center;font-family: 'Orbitron', sans-serif;font-size: 30px;">
-      Root
+      Log
      </td>
     </tr>
    </table>
@@ -50,7 +50,7 @@
  <td> <input class = "button" type = "button" value = "." onclick = "display('.')" /> </td>
  <td> <input class = "button" type = "button" value = "0" onclick = "display('0')" /> </td>
  <!-- calculate() function evaluate the mathematical expression -->
- <td> <input class = "button" type = "button" value = "√" onclick = "calculateRoot()" style = "background-color: #fb0066;" /> </td>
+ <td> <input class = "button" type = "button" value = "Log" onclick = "calculateLog()" style = "background-color: #fb0066;" /> </td>
  
  </tr>
  </table>
@@ -58,6 +58,6 @@
 
  </tr>
 </table>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

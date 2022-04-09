@@ -3,7 +3,7 @@
 <head>
  <meta charset="utf-8">
  <title> Scientific Calculator </title>
- <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <table class = "calculator" >
@@ -12,7 +12,7 @@
    <table class = "head" >
     <tr>
      <td style="color:white;text-align:center;font-family: 'Orbitron', sans-serif;font-size: 30px;">
-      Fact
+      Root
      </td>
     </tr>
    </table>
@@ -22,8 +22,7 @@
  <tr>
   <td>
    <table class = "calculator" >
-
-   <tr>
+ <tr>
  <td colspan = "3"> <input class = "display-box" type = "text" id = "result" disabled /> </td>
  <!-- clearScreen() function clear all the values -->
  <td> <input class = "button" type = "button" value = "C" onclick = "clearScreen()" style = "background-color: #fb0066;" /> </td>
@@ -51,14 +50,14 @@
  <td> <input class = "button" type = "button" value = "." onclick = "display('.')" /> </td>
  <td> <input class = "button" type = "button" value = "0" onclick = "display('0')" /> </td>
  <!-- calculate() function evaluate the mathematical expression -->
- <td> <input class = "button" type = "button" value = "!" onclick = "calculateFact()" style = "background-color: #fb0066;" /> </td>
+ <td> <input class = "button" type = "button" value = "√" onclick = "calculateRoot()" style = "background-color: #fb0066;" /> </td>
  
  </tr>
  </table>
-</td>
+  </td>
 
-</tr>
+ </tr>
 </table>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
