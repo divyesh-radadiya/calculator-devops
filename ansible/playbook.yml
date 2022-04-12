@@ -1,8 +1,8 @@
 ---
-- name: Pull docker image of app
+- name: Pull and Run docker image of divyeshradadiya/caldev
   hosts: all
   tasks:
-    - name: Pull app devops image
+    - name: Pull divyeshradadiya/caldev image
       docker_image:
           name: divyeshradadiya/caldev
           source: pull
