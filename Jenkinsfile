@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('1. Git Pull') {
             steps {
-
 				 git url: 'https://github.com/divyesh-radadiya/calculator-devops.git', branch: 'main',
                  credentialsId: 'git-divyesh-radadiya'
             }

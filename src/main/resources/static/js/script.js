@@ -17,17 +17,17 @@ function display2(value) {
 
 // This function evaluates the expression and return result
 function calculatePower() {
- var p = document.getElementById("result").value;
- var b = document.getElementById("result2").value;
+    const p = document.getElementById("result").value;
+    const b = document.getElementById("result2").value;
 
-    fetch('http://localhost:8081/getpower', {
+    fetch('http://localhost:8081/getPower', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            input1:p,
-            input2:b
+            input1:p.toString(),
+            input2:b.toString()
         })
     }).then(response => response.json())
         .then((data) => {
@@ -35,14 +35,14 @@ function calculatePower() {
         });
 }
 function calculateRoot() {
- var p = document.getElementById("result").value;
-    fetch('http://localhost:8081/getsqrt', {
+    const p = document.getElementById("result").value;
+    fetch('http://localhost:8081/getSqrt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            input1:p,
+            input1:p.toString(),
 
         })
     }).then(response => response.json())
@@ -55,14 +55,14 @@ function calculateRoot() {
 
 function calculateLog() {
 
- var p = document.getElementById("result").value;
-    fetch('http://localhost:8081/getlog', {
+    const p = document.getElementById("result").value;
+    fetch('http://localhost:8081/getLog', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            input1:p,
+            input1:p.toString(),
         })
     }).then(response => response.json())
         .then((data) => {
@@ -72,24 +72,21 @@ function calculateLog() {
 }
 
 function calculateFact() {
- var p = document.getElementById("result").value;
+    const p = document.getElementById("result").value;
 
-    fetch('http://localhost:8081/getfact', {
+    fetch('http://localhost:8081/getFact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            input1:p,
+            input1:p.toString(),
         })
     }).then(response => response.json())
         .then((data) => {
-
             document.getElementById("result").value = data;
         });
- // document.getElementById("result").value = fact;
 
-    // console.log(`The factorial of ${number} is ${fact}.`);
 
 }
 

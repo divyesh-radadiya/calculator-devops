@@ -1,40 +1,117 @@
 package com.example.calculatordevops;
 
 import com.example.calculatordevops.controller.CalController;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-
 public class CalTest {
     private static final double DELTA = 1e-15;
+
     CalController calculator = new CalController();
 
     @Test
     public void squareRootTruePositive(){
-        Map<String,Object> payload = new HashMap();
-        payload.put("input1",(Object) new String("36"));
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1", "100");
 
-        Map<String,Object> payload2 = new HashMap();
-        payload2.put("input1",(Object) new String( "12.25"));
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","25");
 
-        assertEquals("Squaring a number for True Positive", 6, calculator.getSqrt(payload), DELTA);
-        assertEquals("Squaring a number for True Positive", 3.5, calculator.getSqrt(payload2), DELTA);
+        Assert.assertEquals("Square root of number for True Positive", 10, calculator.getSqrt(body1), DELTA);
+        Assert.assertEquals("Square root of number for True Positive", 5, calculator.getSqrt(body2), DELTA);
+
+    }
+    @Test
+    public void squareRootFalsePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1","100");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","25");
+
+        Assert.assertNotEquals("Square root of number for False Positive", 6, calculator.getSqrt(body1), DELTA);
+        Assert.assertNotEquals("Square root of number for False Positive", 2.5, calculator.getSqrt(body2), DELTA);
+    }
+
+    @Test
+    public void factorialTruePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1", "5");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","3");
+
+        Assert.assertEquals("Factorial of number for True Positive", 120, calculator.getFact(body1), DELTA);
+        Assert.assertEquals("Factorial of number for True Positive", 6, calculator.getFact(body2), DELTA);
 
     }
 
     @Test
-    public void squareRootFalsePositive(){
-        Map<String,Object> payload = new HashMap();
-        payload.put("input1",(Object) new String("36"));
+    public void factorialFalsePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1","5");
 
-        Map<String,Object> payload2 = new HashMap();
-        payload2.put("input1",(Object) new String( "12.25"));
-        assertNotEquals("Squaring a number for False Positive", 10, calculator.getSqrt(payload), DELTA);
-        assertNotEquals("Squaring a number for False Positive", 2.5, calculator.getSqrt(payload2), DELTA);
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","3");
+
+        Assert.assertNotEquals("Factorial of number for False Positive", 100, calculator.getFact(body1), DELTA);
+        Assert.assertNotEquals("Factorial of number for False Positive", 25, calculator.getFact(body2), DELTA);
     }
+    @Test
+    public void logTruePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1", "1");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","50");
+
+        Assert.assertEquals("Natural Log of number for True Positive", 0, calculator.getLog(body1), DELTA);
+        Assert.assertEquals("Natural Log of number for True Positive", 3.912023005428146, calculator.getLog(body2), DELTA);
+
+    }
+
+    @Test
+    public void logFalsePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1","1");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","50");
+
+        Assert.assertNotEquals("Natural Log of number for False Positive", 6, calculator.getLog(body1), DELTA);
+        Assert.assertNotEquals("Natural Log of number for False Positive", 2.5, calculator.getLog(body2), DELTA);
+    }
+    @Test
+    public void powerTruePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1", "10");
+        body1.put("input2", "2");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","5");
+        body2.put("input2","3");
+
+        Assert.assertEquals("Power of number for True Positive", 100, calculator.getPower(body1), DELTA);
+        Assert.assertEquals("Power of number for True Positive", 125, calculator.getPower(body2), DELTA);
+
+    }
+
+    @Test
+    public void powerFalsePositive(){
+        Map<String,String> body1 = new HashMap();
+        body1.put("input1", "10");
+        body1.put("input2", "2");
+
+        Map<String,String> body2 = new HashMap();
+        body2.put("input1","5");
+        body2.put("input2","3");
+
+        Assert.assertNotEquals("Power of number for False Positive", 10, calculator.getPower(body1), DELTA);
+        Assert.assertNotEquals("Power of number for False Positive", 25, calculator.getPower(body2), DELTA);
+    }
+
 
 }
