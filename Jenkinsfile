@@ -6,7 +6,7 @@ pipeline {
             steps {
 
 				 git url: 'https://github.com/divyesh-radadiya/calculator-devops.git', branch: 'main',
-                 credentialsId: 'git-divyesh-radadiya'
+                 credentialsId: 'divyesh-radadiya-jenkins'
             }
         }
         stage('2. Maven Build') {
