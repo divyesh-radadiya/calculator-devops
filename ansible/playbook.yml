@@ -3,17 +3,17 @@
   hosts: all
   tasks:
     - name: remove stopped container
-        shell: docker rm -vf $(docker ps -aq) || true
+      shell: docker rm -vf $(docker ps -aq) || true
 
     - name: remove docker images
-        shell: docker rmi -f $(docker images -aq) || true
+      shell: docker rmi -f $(docker images -aq) || true
 
     - name: Pull divyeshradadiya/caldev image
       docker_image:
           name: divyeshradadiya/caldev
           source: pull
 
-    -name: create web container
+    - name: create web container
       shell: sudo docker run -d -p 8081:8081 --name newcal divyeshradadiya/caldev
 
         
