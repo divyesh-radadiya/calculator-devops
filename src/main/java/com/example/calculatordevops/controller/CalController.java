@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 public class CalController {
-    private static final Logger logger = LogManager.getLogger(CalController.class);
+    private static final Logger logger = LogManager.getLogger("CalController");
 
     @RequestMapping("/hello")
 
@@ -30,7 +30,8 @@ public class CalController {
 
         double res = Math.sqrt(input1) ;
 
-//        logger.info("[RESULT] - " + res);
+        logger.info("[SQRT] - INPUT:" + input1 + " , OUTPUT:" + res);
+
 
         return res  ;
     }
@@ -45,6 +46,8 @@ public class CalController {
         for(double i=1;i<=input1;i++)
             res *= i;
 
+        logger.info("[FACT] - INPUT:" + input1 + " , OUTPUT:" + res);
+
         return res;
     }
 
@@ -54,6 +57,9 @@ public class CalController {
         double input1 = Double.parseDouble(body.get("input1"));
 
         double res = Math.log(input1);
+
+        logger.info("[LOG] - INPUT:" + input1 + " , OUTPUT:" + res);
+
 
         return res  ;
     }
@@ -65,11 +71,10 @@ public class CalController {
 
         double input2 = Double.parseDouble( body.get("input2"));
 
-        logger.info("[POWER] - " + input1+" "+input2);
 
         double res = Math.pow(input1,input2);
 
-        logger.info("[POWER_RESULT] - " + res);
+        logger.info("[POWER] - INPUT:" + input1+"^"+input2+" , OUTPUT:" + res);
 
         return res  ;
     }
