@@ -16,11 +16,15 @@ function display2(value) {
 }
 
 // This function evaluates the expression and return result
+
+// var base="http://localhost:8081";
+var base="http://172.16.131.164:8081";
+
 function calculatePower() {
     const p = document.getElementById("result").value;
     const b = document.getElementById("result2").value;
 
-    fetch('http://localhost:8081/getPower', {
+    fetch(base+'/getPower', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
