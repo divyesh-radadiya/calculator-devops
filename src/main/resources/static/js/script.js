@@ -18,7 +18,7 @@ function display2(value) {
 // This function evaluates the expression and return result
 
 // var base="http://localhost:8081";
-var base="http://172.16.131.164:8081";
+var base="http://172.16.128.143:8081";
 
 function calculatePower() {
     const p = document.getElementById("result").value;
@@ -40,7 +40,7 @@ function calculatePower() {
 }
 function calculateRoot() {
     const p = document.getElementById("result").value;
-    fetch('http://localhost:8081/getSqrt', {
+    fetch(base+'/getSqrt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -60,7 +60,7 @@ function calculateRoot() {
 function calculateLog() {
 
     const p = document.getElementById("result").value;
-    fetch('http://localhost:8081/getLog', {
+    fetch(base+'/getLog', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -78,7 +78,7 @@ function calculateLog() {
 function calculateFact() {
     const p = document.getElementById("result").value;
 
-    fetch('http://localhost:8081/getFact', {
+    fetch(base+'/getFact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
