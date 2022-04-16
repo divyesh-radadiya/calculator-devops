@@ -18,7 +18,7 @@ function display2(value) {
 // This function evaluates the expression and return result
 
 // var base="http://localhost:8081";
-var base="http://172.16.128.143:8081";
+var base="http://192.168.56.101:8081";
 
 function calculatePower() {
     const p = document.getElementById("result").value;
