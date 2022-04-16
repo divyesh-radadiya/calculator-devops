@@ -3,7 +3,6 @@ package com.example.calculatordevops;
 import com.example.calculatordevops.controller.CalController;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -96,7 +95,6 @@ public class CalTest {
 
         Assert.assertEquals("Power of number for True Positive", 100, calculator.getPower(body1), DELTA);
         Assert.assertEquals("Power of number for True Positive", 125, calculator.getPower(body2), DELTA);
-
     }
 
     @Test

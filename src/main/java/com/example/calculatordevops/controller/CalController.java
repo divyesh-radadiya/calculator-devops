@@ -14,12 +14,11 @@ public class CalController {
     private static final Logger logger = LogManager.getLogger("CalController");
 
     @RequestMapping("/hello")
-
     String hello() {
         return "Hello Divyesh, Spring Boot!";
     }
 
-    @RequestMapping(value = "/getSqrt",method = RequestMethod.POST)
+    @RequestMapping(value = "/getSqrt", method = RequestMethod.POST)
     public double getSqrt(@RequestBody Map<String,String> body){
 
         double input1 = Double.parseDouble(body.get("input1"));
@@ -33,7 +32,6 @@ public class CalController {
 
     @RequestMapping(value = "/getFact",method = RequestMethod.POST)
     public double getFact(@RequestBody Map<String,String> body){
-
         double input1 = Double.parseDouble( body.get("input1"));
 
         double res= 1;

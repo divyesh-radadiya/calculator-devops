@@ -1,3 +1,3 @@
 [ubuntu18]
-192.168.56.101 ansible_ssh_pass=2606 ansible_ssh_user=dvs
+172.16.128.143 ansible_ssh_pass=2606 ansible_ssh_user=dvs
 

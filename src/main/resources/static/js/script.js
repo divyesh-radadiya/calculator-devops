@@ -6,7 +6,6 @@ function clearScreen2() {
  document.getElementById("result2").value = "";
 }
 
-// This function display values
 function display(value) {
  document.getElementById("result").value += value;
 }
@@ -15,10 +14,9 @@ function display2(value) {
  document.getElementById("result2").value += value;
 }
 
-// This function evaluates the expression and return result
 
 // var base="http://localhost:8081";
-var base="http://192.168.56.101:8081";
+var base="http://172.16.128.143:8081";
 
 function calculatePower() {
     const p = document.getElementById("result").value;
