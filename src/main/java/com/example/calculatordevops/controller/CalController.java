@@ -1,6 +1,5 @@
 package com.example.calculatordevops.controller;
 
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,21 +16,17 @@ public class CalController {
     @RequestMapping("/hello")
 
     String hello() {
-        return "Hello World, Spring Boot!";
+        return "Hello Divyesh, Spring Boot!";
     }
-
 
     @RequestMapping(value = "/getSqrt",method = RequestMethod.POST)
     public double getSqrt(@RequestBody Map<String,String> body){
 
         double input1 = Double.parseDouble(body.get("input1"));
 
-//        logger.info("[SQRT] - " + input1);
-
         double res = Math.sqrt(input1) ;
 
         logger.info("[SQRT] - INPUT:" + input1 + " , OUTPUT:" + res);
-
 
         return res  ;
     }
@@ -60,7 +55,6 @@ public class CalController {
 
         logger.info("[LOG] - INPUT:" + input1 + " , OUTPUT:" + res);
 
-
         return res  ;
     }
 
@@ -70,7 +64,6 @@ public class CalController {
         double input1 = Double.parseDouble(body.get("input1"));
 
         double input2 = Double.parseDouble( body.get("input2"));
-
 
         double res = Math.pow(input1,input2);
 
